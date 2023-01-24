@@ -5,8 +5,9 @@ import { StatusBar } from "expo-status-bar";
 import About from "./screens/About";
 import Home from "./screens/Home";
 import ReviewDetails from "./screens/ReviewDetails";
+import { RootStackParamList } from "./types";
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   let [loaded] = useFonts({
@@ -23,10 +24,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar style="light" />
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen component={Home} name="Home" />
         <Stack.Screen component={About} name="About" />
-        <Stack.Screen component={ReviewDetails} name="Review Details" />
+        <Stack.Screen component={ReviewDetails} name="Details" />
       </Stack.Navigator>
     </NavigationContainer>
   );

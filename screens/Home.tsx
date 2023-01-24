@@ -1,14 +1,17 @@
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Button, Text, View } from "react-native";
-import * as NavigationService from "react-navigation-helpers";
 import { globalStyles } from "../styles/global";
-const Home = () => {
+import { RootStackParamList } from "../types";
+
+type HomeProps = NativeStackScreenProps<RootStackParamList, "Home">;
+const Home = ({ navigation, route }: HomeProps) => {
   const handleOnPress = () => {
-    NavigationService.push("About");
+    navigation.navigate("About");
   };
   return (
     <View style={globalStyles.container}>
       <Text style={globalStyles.titleText}> Hello world!</Text>
-      <Button title="Go to about" onPress={handleOnPress} />
+      <Button title="Go to About screen" onPress={handleOnPress} />
     </View>
   );
 };

@@ -1,10 +1,18 @@
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import { globalStyles } from "../styles/global";
-const ReviewDetails = () => {
+import { RootStackParamList } from "../types";
+
+type ReviewDetailsProps = NativeStackScreenProps<RootStackParamList, "Details">;
+const ReviewDetails = ({ navigation }: ReviewDetailsProps) => {
+  const handleNavigation = () => {
+    navigation.navigate("Home");
+  };
   return (
     <View style={styles.container}>
       <Text style={globalStyles.paragraph}> Review</Text>
+      <Button title="Home" onPress={handleNavigation} />
     </View>
   );
 };
