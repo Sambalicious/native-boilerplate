@@ -1,10 +1,6 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import RootNavigator from "./routes/rootNavigator";
-import { RootStackParamList } from "./types";
-
-const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   let [loaded] = useFonts({

@@ -1,8 +1,16 @@
-export type RootStackParamList = {
+import { RouteProp } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+
+export type HomeStackParamList = {
   Home: undefined;
-  About: undefined;
   Details: TReview;
 };
+
+export type HomeScreenNavigationProp = NativeStackNavigationProp<
+  HomeStackParamList,
+  "Details"
+>;
+export type DetailScreenRouteProp = RouteProp<HomeStackParamList, "Details">;
 
 export interface TReview {
   title: string;

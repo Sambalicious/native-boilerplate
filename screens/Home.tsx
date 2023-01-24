@@ -1,5 +1,4 @@
 import { useNavigation } from "@react-navigation/native";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { useState } from "react";
 import {
   FlatList,
@@ -10,14 +9,14 @@ import {
 } from "react-native";
 import { review } from "../shared/dummy";
 import { globalStyles } from "../styles/global";
-import { RootStackParamList, TReview } from "../types";
+import { HomeScreenNavigationProp, TReview } from "../types";
 
-type HomeProps = NativeStackScreenProps<RootStackParamList, "Home">;
-const Home = ({ route }: HomeProps) => {
-  const navigation = useNavigation();
+//type HomeProps = NativeStackScreenProps<HomeStackParamList, "Home">;
+const Home = () => {
+  const navigation = useNavigation<HomeScreenNavigationProp>();
   const [allReviews, setAllReviews] = useState(review);
   const handleOnPress = (item: TReview) => {
-    navigation.navigate("Details", { item });
+    navigation.navigate("Details", item);
   };
   return (
     <View style={globalStyles.container}>
