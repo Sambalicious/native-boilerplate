@@ -7,8 +7,21 @@ const HomeStack = createNativeStackNavigator<HomeStackParamList>();
 
 const HomeStackNavigator = () => {
   return (
-    <HomeStack.Navigator initialRouteName="Home">
-      <HomeStack.Screen name="Home" component={HomeScreen} />
+    <HomeStack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerStyle: { backgroundColor: "#eee" },
+        //headerTransparent: true,
+        headerTintColor: "#000",
+      }}
+    >
+      <HomeStack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          title: "Homes",
+        }}
+      />
       <HomeStack.Screen name="Details" component={DetailsScreen} />
     </HomeStack.Navigator>
   );

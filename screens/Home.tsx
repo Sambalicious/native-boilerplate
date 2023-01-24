@@ -35,5 +35,7 @@ const Home = () => {
 export default Home;
 
 const styles = StyleSheet.create({
-  item: { marginVertical: 6 },
+  item: {
+    marginVertical: 6,
+  },
 });
