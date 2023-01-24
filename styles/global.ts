@@ -1,8 +1,9 @@
 import { StyleSheet } from "react-native";
+import fonts from "../shared/fonts";
 
 export const globalStyles = StyleSheet.create({
   titleText: {
-    fontFamily: "MontserratSemiBold",
+    fontFamily: fonts.montserrat.semibold,
     fontSize: 18,
     color: "#333",
   },

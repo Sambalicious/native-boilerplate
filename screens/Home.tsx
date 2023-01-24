@@ -1,11 +1,14 @@
-import React from "react";
-import { Text, View } from "react-native";
+import { Button, Text, View } from "react-native";
+import * as NavigationService from "react-navigation-helpers";
 import { globalStyles } from "../styles/global";
-
 const Home = () => {
+  const handleOnPress = () => {
+    NavigationService.push("About");
+  };
   return (
     <View style={globalStyles.container}>
-      <Text style={globalStyles.titleText}>I am here now. Hello world!</Text>
+      <Text style={globalStyles.titleText}> Hello world!</Text>
+      <Button title="Go to about" onPress={handleOnPress} />
     </View>
   );
 };
